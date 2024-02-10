@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+mongoose.connect("mongodb://127.0.0.1:27017/Pinterest_C")
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -15,8 +17,7 @@ const userSchema = new mongoose.Schema({
     // ref: 'Post'
   }],
   dp: {
-    type: String,
-    default: 'default.jpg' // Default profile picture
+    type: String, // Assuming that the profile picture is stored as a URL or file path
   },
   email: {
     type: String,
@@ -29,6 +30,4 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);
