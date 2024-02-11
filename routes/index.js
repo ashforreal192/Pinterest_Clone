@@ -13,7 +13,7 @@ router.get("/createuser", async function(req, res, next){
   let createdUser = await userModel.create({
     username: "Shatodru",
     password: "shatodru",
-    posts: [],
+    // posts: [],
     email: "shatodru@male.com",
     fullName: "Shatodru Sarkar"
   })
@@ -21,20 +21,14 @@ router.get("/createuser", async function(req, res, next){
 })
 
 router.get("/cpost", async function(req, res, next){
-  postModel.create({
-    postText: {
-      type: String,
-      required: true
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now // Automatically sets the current date and time when a post is created
-    },
-    likes: {
-      type: Array,
-      default: []
-    }
+  let createdPost = await postModel.create({
+    postText: "This is a test Post.",
+    user: "65c7142d5bc7414cabf3a356"
   })
+  let user = await userModel.findOne({_id: "65c7142d5bc7414cabf3a356"})
+  user.posts.push(createdPost._id);
+  await user.save()
+  res.send("Done")
 })
 
 module.exports = router;
