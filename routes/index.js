@@ -9,11 +9,17 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/alluserposts', async function(req, res, next){
+  let user = await userModel.findOne({_id: "65c7142d5bc7414cabf3a356"})
+  .populate("posts")
+  res.send(user)
+})
+
 router.get("/createuser", async function(req, res, next){
   let createdUser = await userModel.create({
-    username: "Shatodru",
+    username: "ShatodruS",
     password: "shatodru",
-    // posts: [],
+    posts: [],
     email: "shatodru@male.com",
     fullName: "Shatodru Sarkar"
   })
@@ -22,7 +28,7 @@ router.get("/createuser", async function(req, res, next){
 
 router.get("/cpost", async function(req, res, next){
   let createdPost = await postModel.create({
-    postText: "This is a test Post.",
+    postText: "Hello kaise ho sare??",
     user: "65c7142d5bc7414cabf3a356"
   })
   let user = await userModel.findOne({_id: "65c7142d5bc7414cabf3a356"})
