@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Gilroy";
 }
 body {
   background-color: black;
@@ -10,24 +11,21 @@ body {
 .container {
   background-color: white;
   width: 480px;
-  height: 650px;
+  height: 800px;
   position: absolute;
   margin: auto;
-  top: 20%;
+  top: 5%;
   left: 0;
+  /* transform: translate(-80%,-30%); */
   bottom: 0;
   right: 0;
   border-radius: 10px;
   box-shadow: 2px 2px 3px -1px rgba(0, 0, 0, 0.5);
 }
+
 .content {
   width: 56%;
-  position: absolute;
   margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   text-align: center;
 }
  
@@ -39,9 +37,9 @@ body {
 .header {
   font-size: 32px;
   font-weight: 700;
-  margin-top: 40px;
-  margin-bottom: 10px;
-  line-height: 46px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  line-height: 30px;
 }
 .detail {
   width: 100%;
@@ -141,6 +139,7 @@ hr {
 }
 .upbtn{
   text-decoration: none;
+  color: black;
   position: relative;
   top: 50px;
   left: 140px;
