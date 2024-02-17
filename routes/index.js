@@ -31,9 +31,12 @@ router.post("/register", function(req, res){
     fullname: req.body.fullname
   })
   
-  userModel.register(userData, req.body.password)
-  .then(function(){
-    passport.authenticate("local")(req,res,function(){
+  userModel.register(userData, req.body.password, function(err, user){
+    if(err){
+      console.error(err);
+      return res.render("register");
+    }
+    passport.authenticate("local")(req, res, function(){
       res.redirect("/profile");
     })
   })
