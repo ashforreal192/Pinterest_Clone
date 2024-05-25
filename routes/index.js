@@ -30,8 +30,9 @@ router.post('/register', function(req, res, next) {
   })
 });
 
-router.post("/register", passport.authenticate("local",{
-
+router.post("/login", passport.authenticate("local",{
+failureRedirect: "/",
+successRedirect: "/profile",
 }), function(req, res, next){
   
 })
