@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 var userModel = require("./users");
 const passport = require('passport');
+const localStrategy = require("passport-local")
+passport.use(new localStrategy(userModel.authenticate()))
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
@@ -11,7 +15,7 @@ router.get('/register', function(req, res, next) {
   res.render('register');
 });
 
-router.get('/profile', function(req, res, next) {
+router.get('/profile', isLoggedIn, function(req, res, next) {
   res.render('profile');
 });
 
@@ -36,5 +40,19 @@ successRedirect: "/profile",
 }), function(req, res, next){
   
 })
+
+router.get("/logout", function(req, res, next){
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
+})
+
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect("/")
+}
 
 module.exports = router;
