@@ -13,8 +13,11 @@
                     <img class="w-full h-full object-cover" src="/images/uplaods/<%= user.profileImage %>" alt="">
                 </div>
             </div>
-            <h1 class="text-3xl font-semibold mt-5">Shatodru Sarkar</h1>
-            <h3 class="text-md">@username</h3>
+            <h1 class="text-3xl font-semibold mt-5">
+                <%= user.name %>
+            </h1>
+            <h3 class="text-md">@<%= user.username %>
+            </h3>
             <a href="/edit" class="mt-5 px-7 py-2 bg-zinc-700 rounded-full">Edit</a>
             <a href="/add" class="px-10 py-2 rounded-lg bg-red-700 text-xs font-semibold mt-10">Add new post</a>
         </div>
@@ -23,11 +26,12 @@
     <div class="cards flex flex-wrap gap-10 px-10 mt-10">
         <div class="card">
             <div class="w-52 h-52 bg-zinc-200 rounded-lg overflow-hidden">
-                <img class="w-full h-full object-cover"
-                    src="https://i.pinimg.com/564x/7e/78/66/7e78665f8f6301cbff52512cf6599aff.jpg" alt="">
+                <img class="w-full h-full object-cover" src="/images/uplaods/<%= user.posts[0].image %>" alt="">
             </div>
-            <h3 class="text-xl font-semibold mt-5">All pins</h3>
-            <h5 class="text-sm font-medium opacity-60">28 Pins</h5>
+            <a href="/show/posts" class="inline-block text-xl font-semibold mt-5">Your uploaded pins</a>
+            <h5 class="text-sm font-medium opacity-60">
+                <%= user.posts.length %> Pins
+            </h5>
         </div>
     </div>
 

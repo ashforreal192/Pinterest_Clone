@@ -1,22 +1,33 @@
 <% include ./partials/header.ejs %>
 
-<div class="w-full h-screen bg-cover bg-center bg-[url(https://images.unsplash.com/photo-1622307053412-5404f0c427c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] flex items-center justify-center">
+  <div
+    class="w-full h-screen bg-cover bg-center bg-[url(https://images.unsplash.com/photo-1622307053412-5404f0c427c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] flex items-center justify-center">
     <div class="w-[20vw] h-[70vh] bg-white px-[2vw] py-[4vh] rounded-md">
-      <h1 class="mb-[3vh] text-3xl text-center font-semibold text-zinc-700 tracking-tighter capitalize leading-none">Create new account</h1>
+      <h1 class="mb-[3vh] text-3xl text-center font-semibold text-zinc-700 tracking-tighter capitalize leading-none">
+        Create new account</h1>
       <form action="/register" method="post">
-        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="text" name="username" placeholder="Username">
-        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="email" name="email" placeholder="Email">
-        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="number" name="contact" placeholder="Contact">
-        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="password" name="password" placeholder="Password">
-        <input class="border-2 rounded-full block mt-[2.5vh] w-full px-[3vw] py-[1.5vh] bg-red-600 text-white rounded-full" type="submit" value="Create New Account">
+        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="text" name="username"
+          placeholder="Username">
+        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="text" name="fullname"
+          placeholder="Full name">
+        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="email" name="email"
+          placeholder="Email">
+        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="number" name="contact"
+          placeholder="Contact">
+        <input class="border-2 rounded-md block mt-[1vh] w-full px-[1vw] py-[1vh]" type="password" name="password"
+          placeholder="Password">
+        <input
+          class="border-2 rounded-full block mt-[2.5vh] w-full px-[3vw] py-[1.5vh] bg-red-600 text-white rounded-full"
+          type="submit" value="Create New Account">
         <p class="text-center mt-[5vh] text-xs font-semibold">
           By continuing, you agree to Pinterest's Terms of Service;
           Opens a new tab and acknowledge you've read our Privacy Policy;
           Opens a new tab. Notice at collection
         </p>
       </form>
-      <a class="inline-block w-full mt-[5vh] text-sm font-semibold text-zinc-700 text-center" href="/">Login into existing account</a>
+      <a class="inline-block w-full mt-[5vh] text-sm font-semibold text-zinc-700 text-center" href="/">Login into
+        existing account</a>
     </div> <!--For custom height or width we write h-[70vh] or w-[90vh]-->
-</div>
+  </div>
 
-<% include ./partials/footer.ejs %>
+  <% include ./partials/footer.ejs %>
